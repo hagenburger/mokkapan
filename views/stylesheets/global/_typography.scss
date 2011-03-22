@@ -1,3 +1,11 @@
+.primary-color {
+  color: $primary-color;
+}
+
+.primary-shadow {
+  @include text-shadow(rgba($primary-color, .5) 0 0 3px);
+}
+
 .base-font {
   font-family: $base-font-family;
 }
@@ -37,13 +45,13 @@
 .paragraph {
   @extend .base-font;
   @extend .m;
-  margin: 1em 0;
+  margin: .75em 0;
 }
 
 .headline {
   @extend .headline-font;
   @extend .bold; 
-  margin: 1em 0;
+  margin: .75em 0;
 }
 
 body {
@@ -62,12 +70,30 @@ p {
 h1 {
   @extend .headline;
   @extend .xl;
+  @extend .primary-color;
+  margin-top: 0;
+  span {
+    display: block;
+    @include text-shadow(rgba(#F45DA4, .5) 0 0 3px);
+    &[lang="en"] {
+      color: #F45DA4;
+      @include text-shadow(rgba(#F45DA4, .5) 0 0 3px);
+    }
+  }
 }
 
 h2,
 legend {
   @extend .headline;
   @extend .l;
+  margin-bottom: 0;
+  [lang="en"] {
+    color: mix($primary-color, $background-color, 80%);
+    &:before {
+      color: mix($primary-color, $background-color, 50%);
+      content: "· ";
+    }
+  }
 }
 
 h3,
@@ -85,4 +111,33 @@ article {
   ul {
     @extend .paragraph;
   }
+}
+
+dl {
+  @extend .paragraph;
+}
+
+dt {
+  @extend .primary-color;
+  @extend .bold;
+  margin-top: .75em;
+  @include text-shadow(rgba(#F45DA4, .5) 0 0 3px);
+}
+
+dd,
+ul li {
+  list-style: none;
+  margin-left: 8px;
+  text-indent: -11px;
+  &:before {
+    content: "– ";
+  }
+}
+
+ul {
+  @extend .paragraph;
+}
+
+[lang="en"] {
+  font-style: italic;
 }

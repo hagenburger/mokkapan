@@ -9,13 +9,13 @@
 
 // Base colors and sizes
 
-$primary-color: #aaa;
-$secondary-color: #bbb;
-$font-color: #444;
-$link-color: #3F7D99;
+$primary-color: #AD5089;
+$background-color: #E8BDB4;
+$font-color: darken($primary-color, 20%);
+$link-color: #D968A0;
 
-$base-font-family: "helvetica neue", helvetica, arial, sans-serif;
-$headline-font-family: "helvetica neue", helvetica, arial, sans-serif;
+$base-font-family: "warnock-pro-1", "warnock-pro-2", helvetica, arial, sans-serif;
+$headline-font-family: $base-font-family;
 $small-font-size: 11px;
 $base-font-size: 13px;
 $large-font-size: 20px;

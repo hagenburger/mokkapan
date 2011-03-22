@@ -1,7 +1,7 @@
-- @lang        ||= 'en'
+- @lang        ||= 'de'
 - @author      ||= ''
 - @description ||= ''
-- @title         = [@title, 'mokkapan'].compact.join(' - ')
+- @title         = [@title, 'Mokkapan Phongphit'].compact.join(' - ')
 - current_page_relative_path = "."
 !!!  
 %html(lang="#{@lang}" class="no-js")
@@ -21,18 +21,23 @@
     %link(rel="shortcut icon" href="#{asset_url('favicon.ico')}")
     %link(rel="apple-touch-icon" href="#{asset_url('apple-touch-icon.png')}")
     %link(rel="stylesheet" href="#{asset_url('stylesheets/mokkapan.css?v=1')}")
-    %script(src="//use.typekit.com/fal4qpz.js" async onload="try{Typekit.load()}catch(e){}")
+    %script(src="//use.typekit.com/inl1jab.js" async onload="try{Typekit.load()}catch(e){}")
     - if @stylesheet
       %link(rel="stylesheet" href="#{asset_url("stylesheets/#{@stylesheet}.css")}")
     - javascript = @jquery || @javascript || yield_content(:javascript)
     %script for(var e,l='article aside figcaption figure footer header nav section time'.split(' ');e=l.pop();document.createElement(e));try{Typekit.load()}catch(e){}onload=function(){#{javascripts(:mokkapan)}}#{%Q(var ol=function(){#{compress_javascript(javascript)}}) if javascript}
-  %body
     %header
       %a#logo(href="#{asset_url('.')}")
         = image_tag 'mokkapan.png', :alt => 'mokkapan'
+      %nav
+        - { about_me: ['Über mich', 'About me'], artist: ['Künstler', 'Artist'], violin_class: ['Geigenunterricht', 'Violin class'], upcoming: ['Termine', 'Upcoming'], links: ['Links', 'Links'], contact: ['Kontakt', 'Contact'] }.each do |id, text|
+          - link = id.to_s.gsub('_', '-') + '.html'
+          %a{ :href => link, :class => request.url =~ /#{link}/ ? 'selected' : nil }
+            %span= text[0]
+            %span(lang="en")= text[1]
     #main
       = yield
     %footer
-
+      © Mokkapan Phongphit (Geiger/Violinist) #{Time.now.year} · #{link_to 'Impressum', 'contact.html'} · #{link_to 'Design by Nico Hagenburger', 'http://www.hagenburger.net', title: 'Ruby on Rails, Sass, SCSS, Compass, CSS3, HTML5'}
     %script(src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js")
     %script !window.jQuery && document.write(unescape('%3Cscript src="#{asset_url('javascripts/vendor/jquery-1.4.2.min.js')}"%3E%3C/script%3E'))

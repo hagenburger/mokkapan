@@ -1,1 +1,78 @@
+html {
+  background: $background-color image-url("tile.jpg") fixed;
+  height: 100%;
+}
 
+body {
+  background: image-url("background.jpg") no-repeat fixed;
+  color: $font-color;
+  min-height: 100%;
+  position: relative;
+  @include clearfix;
+}
+
+#logo {
+  left: 210px;
+  position: fixed;
+  top: 0;
+}
+
+header {
+  display: block;
+  height: 284px;
+  @include clearfix;
+}
+
+nav {
+  display: block;
+  margin: 192px 50px 0 550px;
+  a {
+    display: inline-block;
+    margin-right: 20px;
+    @include text-shadow(rgba(#BD568D, .3) 0 0 3px);
+    &.selected {
+      @include text-shadow(#FFE9E3 0 0 3px);
+    }
+    &:hover {
+      text-decoration: none;
+      @include text-shadow(#BD568D 0 0 3px);
+    }
+    &.selected:hover {
+      text-decoration: none;
+      @include text-shadow(#FFE9E3 0 0 3px);
+    }
+    span {
+      color: #BD568D;
+      cursor: pointer;
+      display: block;
+      margin-bottom: 2px;
+      text-align: center;
+      white-space: nowrap;
+      &[lang="en"] {
+        color: #F45DA4;
+      }
+    }
+    &.selected span {
+      color: white;
+      &[lang="en"] {
+        color: #FFE9E3;
+      }
+    }
+  }
+}
+
+#main {
+  margin: 0 50px 100px 550px;
+  max-width: 480px;
+}
+
+footer {
+  bottom: 30px;
+  color: #FFE9E3;
+  display: block;
+  left: 550px;
+  position: absolute;
+  a {
+    color: white;
+  }
+}

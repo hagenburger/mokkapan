@@ -1,3 +1,5 @@
 a {
+  @extend .bold;
+  color: $link-color;
   @include hover-link;
 }
