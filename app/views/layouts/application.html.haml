@@ -1,0 +1,50 @@
+- @lang        ||= 'de'
+- @author      ||= ''
+- @description ||= ''
+- @title         = [@title, 'Mokkapan Phongphit'].compact.join(' - ')
+- current_page_relative_path = "."
+!!!  
+%html(lang="#{@lang}" class="no-js")
+  /
+     
+    Designed and developed by www.hagenburger.net
+     
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    - if description = @description
+      %meta(name="description" content="#{description}")
+    - if author = @author
+      %meta(name="author" content="#{author}")
+    %title= @title
+    %meta(name="viewport" content="width=device-width; initial-scale=1.0")
+    %link(rel="apple-touch-icon" href="#{asset_path('apple-touch-icon.png')}")
+    %link(rel="stylesheet" href="#{asset_path('application.css')}")
+    %link(rel="stylesheet" href="#{asset_path('fancybox/jquery.fancybox-1.3.4.css')}")    
+    %script(src="//use.typekit.com/inl1jab.js" async onload="try{Typekit.load()}catch(e){}")
+    - if @stylesheet
+      %link(rel="stylesheet" href="#{asset_path("stylesheets/#{@stylesheet}.css")}")
+    - javascript = @jquery || @javascript || yield(:javascript)
+    %script(type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js")
+    %script(type="text/javascript" src="/assets/fancybox/jquery.mousewheel-3.0.4.pack.js")
+    %script(type="text/javascript" src="/assets/fancybox/jquery.fancybox-1.3.4.pack.js")
+    = yield :head
+    
+  %body
+    %header
+      %a#logo(href=index_path)
+        = image_tag 'mokkapan.png', :alt => 'mokkapan'
+      %nav
+        - ['about_me', 'artist', 'violin_class', 'upcoming', 'links', 'contact'].each do |id|
+          - link = "/#{I18n.locale}/" + id.to_s.gsub(/_/, '-')
+          %a{ :href => link, :class => request.url =~ /#{link}/ ? 'selected' : nil }
+            = I18n.t id.to_s << '.title'
+    #main
+      = yield
+    %footer
+      © Mokkapan Phongphit (Geiger/Violinist) #{Time.now.year} · #{link_to 'Impressum', 'contact.html'} · #{link_to 'Design by Nico Hagenburger', 'http://www.hagenburger.net', title: 'Ruby on Rails, Sass, SCSS, Compass, CSS3, HTML5'}
+
+    
+    
+    
+    

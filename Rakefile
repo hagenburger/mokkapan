@@ -1,39 +1,7 @@
-# encoding: utf-8
+#!/usr/bin/env rake
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
-require "bundler"
-Bundler.setup
+require File.expand_path('../config/application', __FILE__)
 
-ssh_user = "nico@hagenburger.net"
-production_url = "http://www.mokkapan.net/"
-production_path = "/home/web/hagenburger/PREVIEW/mokkapan"
-
-desc "Builds the site with bundler"
-task :build do
-  puts "Building the site"
-  system "bundle exec mm-build"
-
-  # fix wrong image urls
-  css = File.read('build/stylesheets/mokkapan.css')
-  File.open('build/stylesheets/mokkapan.css', 'w') do |file|
-    css.gsub! '../../images', '../images'
-    css.gsub! /(\.png|\.jpg)\d+/, '\\1'
-    file.write css
-  end
-  Dir.glob '**/*.html' do |file|
-    html = File.read(file)
-    File.open(file, 'w') do |file|
-      html.gsub! 'images/images', 'images'
-      file.write html
-    end
-  end
-
-  require "jammit"
-  Jammit.load_configuration('assets.yml')
-  Jammit.packager.precache_all(File.join('.', 'build', 'javascripts'), '.')
-end
-
-desc "Deploys the site to #{production_url}"
-task :deploy => :build do
-  puts "Deploying the site to #{production_url}"
-  system("rsync -avz --delete build/ #{ssh_user}:#{production_path}")
-end
+Mokkapan::Application.load_tasks

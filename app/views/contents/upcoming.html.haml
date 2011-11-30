@@ -1,0 +1,13 @@
+- @title = 'Termine/Upcoming'
+%h1
+  = I18n.t 'upcoming.title'
+  
+%dl
+  - Event.all.each do |event|
+    %dt
+      %dt=event.date.strftime('%e. %B %Y')
+      %dd
+        %h3=event.title
+        %p=raw(event.content.gsub(/\n/, '<br/>'))
+        - if !event.link.blank?
+          %a=link_to "Veranstaltungs-Website", event.link

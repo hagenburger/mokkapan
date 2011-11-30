@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# This is needed to find gems installed with --user-install
+export HOME=/home/i
+
+# Include our profile to get Ruby 1.9.2 included in our PATH
+. $HOME/.bash_profile
+
+# This makes Rails/Rack think we're running under FastCGI. WTF?!
+# See ~/.gem/ruby/1.9.1/gems/rack-1.2.1/lib/rack/handler.rb
+export PHP_FCGI_CHILDREN=1
+
+# Get into the project directory and start the Rails server
+cd $HOME/iskandar/current
+exec rails server -e production

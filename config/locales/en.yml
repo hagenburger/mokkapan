@@ -1,0 +1,26 @@
+en:
+  
+  artist:
+    title: "Artist"
+    
+  contact:
+    title: "Contact"
+      
+  about_me:
+    title: "About me"
+    
+  upcoming:
+    title: "Upcoming"
+    
+  links:
+    title: "Links"
+    
+  violin_class:
+    title: "Violin class"
+    method: "Method"
+    students: "Students"
+    languages: "Languages"
+    tuition_fees: "Tution fees"
+    concerts: "Concerts"
+    location: "Location"
+    

@@ -1,34 +1,12 @@
-## OS
-.DS_Store
-Thumbs.db
-
-## TEXTMATE
-*.tmproj
-tmtags
-
-## LOGS
-*.log
-
-## EMACS
-*~
-#*
-.#*
-
-## VIM
-*.swp
-
-## PROJECT::GENERAL
-coverage
-rdoc
-pkg
 .bundle
-
-## CACHES
-.sass-cache
-*.cache
-
-## TMP
-tmp
-
-## MIDDLEMAN
-build
+db/*.sqlite3
+log/*.log
+tmp/
+.sass-cache/
+*.DS_Store
+*~
+*.swp
+*.swo
+.DS_STORE
+public/system/
+public/stylesheets/active_admin.css.css 

@@ -1,0 +1,9 @@
+AuthType Basic
+AuthName "Geschuetzter Bereich"
+AuthUserFile /home/i/.htuser
+Require valid-user
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /fcgi-bin/iskandar/$1 [QSA,L]
