@@ -6,6 +6,8 @@
     %title= data.page.title || "Mokkapan"
     = stylesheet_link_tag "mokkapan"
     = javascript_include_tag "all"
+    %script(src="//use.typekit.net/inl1jab.js")
+    %script try{Typekit.load();}catch(e){}
   %body(class=page_classes)
     %header
       = link_to nil, '/', id: 'logo'
