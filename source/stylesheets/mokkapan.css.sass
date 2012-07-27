@@ -4,3 +4,51 @@
 html
   background: #3a0325 image-url("background.jpg") no-repeat
   +background-size(cover)
+
+header
+  background: image-url("navigation.png") no-repeat
+  height: 303px
+  left: 30px
+  position: absolute
+  top: 20px
+  width: 145px
+
+  a
+    display: block
+    position: relative
+    +hide-text
+
+#logo
+  height: 174px
+
+nav a
+  &:hover
+    background: rgba(white, 0.2)
+    +box-shadow(rgba(white, 0.2) 0 0 2px)
+  &.selected
+    &:before,
+    &:after
+      background: rgba(white, 0.2)
+      content: ""
+      height: 1px
+      margin: 0 -5px
+      position: absolute
+      top: 50%
+      width: 20px
+    &:after
+      right: 0
+
+#ueber-mich
+  height: 27px
+
+#kuenstler
+  height: 29px
+
+#termine
+  height: 30px
+
+#geigenuntericht
+  height: 19px
+
+#kontakt
+  height: 29px
