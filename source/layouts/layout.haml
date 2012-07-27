@@ -10,9 +10,6 @@
     %header
       = link_to nil, '/', id: 'logo'
       %nav
-        = link_to nil, '/', id: 'ueber-mich'
-        = link_to nil, '/', id: 'kuenstler'
-        = link_to nil, '/', id: 'termine'
-        = link_to nil, '/', id: 'geigenuntericht'
-        = link_to nil, '/', id: 'kontakt'
+        - %w(ueber-mich kuenstler termine geigenuntericht kontakt).each do |page|
+          = link_to page, "#{page}.html", id: page, class: request.path =~ /#{page}/ ? 'selected' : nil
     = yield
