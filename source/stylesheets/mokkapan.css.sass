@@ -1,6 +1,9 @@
 @import "compass"
 @import "normalize"
 
+$elements-spacing: 10px
+@import "elements/*.png"
+
 html
   background: #3a0325 image-url("background.jpg") no-repeat
   +background-size(cover)
@@ -11,12 +14,12 @@ body
   -webkit-font-smoothing: antialiased
 
 header
-  background: image-url("navigation.png") no-repeat
   height: 303px
   left: 30px
   position: absolute
   top: 20px
   width: 145px
+  +elements-sprite(navigation)
 
   a
     display: block
@@ -127,3 +130,15 @@ dt
     position: absolute
     top: 0.7em
     width: 100%
+
+a[href*=dribbble],
+a[href*=twitter]
+  display: inline-block
+  margin: 0 0 0 0.3em
+  vertical-align: -2px
+  +elements-sprite(dribbble, $dimensions: true)
+  +hide-text
+
+a[href*=twitter]
+  +elements-sprite-position(twitter)
+
