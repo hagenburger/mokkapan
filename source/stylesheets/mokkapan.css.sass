@@ -8,6 +8,7 @@ html
 body
   font-family: "news-gothic-std-1", "news-gothic-std-2", helvetica, arial, sans-serif
   font-weight: 400
+  -webkit-font-smoothing: antialiased
 
 header
   background: image-url("navigation.png") no-repeat
@@ -58,3 +59,71 @@ nav a
 
 #kontakt
   height: 29px
+
+article
+  color: #e6d1de
+  line-height: 1.4
+  margin: 145px 100px 100px 250px
+  width: 500px
+
+a
+  color: #c2a36e
+  +hover-link
+
+p,
+ul,
+address,
+dt,
+dd
+  font-size: 15px
+  font-style: normal
+  margin: 0.75em 0
+  padding: 0
+
+li, dd
+  margin: 0.25em 0 0.25em 30px
+  list-style: none
+  position: relative
+  &:before
+    background: rgba(white, 0.2)
+    content: ""
+    height: 1px
+    left: -30px
+    position: absolute
+    top: 0.7em
+    width: 20px
+
+h1
+  color: #6e2854
+  letter-spacing: 3px
+  margin: 0 0 0.75em
+  text-transform: uppercase
+
+h2
+  color: #883d6c
+  font-size: 18px
+  margin: 2em 0 0
+  position: relative
+  &:after
+    border: rgba(white, 0.2) solid
+    border-width: 1px 0
+    content: ""
+    height: 2px
+    margin-left: 0.4em
+    position: absolute
+    top: 0.7em
+    width: 100%
+
+dt
+  color: #883d6c
+  font-weight: bold
+  margin-top: 1.5em
+  position: relative
+  &:after
+    background: rgba(white, 0.2)
+    content: ""
+    height: 1px
+    margin-left: 0.4em
+    position: absolute
+    top: 0.7em
+    width: 100%
