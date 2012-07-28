@@ -37,27 +37,29 @@ header
   position: fixed
   +elements-sprite(mokkapan, $dimensions: true)
 
-nav a
-  margin: 3px 0 3px 22px
-  overflow: visible
-  +transition(background-color, 0.5s)
-  &:hover
-    background-color: rgba(white, 0.1) !important
-    +box-shadow(rgba(white, 0.2) 0 0 5px)
-  &.selected
-    &:before,
-    &:after
-      background: rgba(white, 0.2)
-      content: ""
-      height: 1px
-      left: 0
-      margin: 0 -27px
-      position: absolute
-      top: 50%
-      width: 20px
-    &:after
-      left: auto
-      right: 0
+nav
+  margin-top: 20px
+  a
+    margin: 3px 0 3px 22px
+    overflow: visible
+    +transition(background-color, 0.5s)
+    &:hover
+      background-color: rgba(white, 0.1) !important
+      +box-shadow(rgba(white, 0.2) 0 0 5px)
+    &.selected
+      &:before,
+      &:after
+        background: rgba(white, 0.2)
+        content: ""
+        height: 1px
+        left: 0
+        margin: 0 -27px
+        position: absolute
+        top: 50%
+        width: 20px
+      &:after
+        left: auto
+        right: 0
 
 @each $id in ueber-mich kuenstler termine geigenunterricht kontakt
   ##{$id}
