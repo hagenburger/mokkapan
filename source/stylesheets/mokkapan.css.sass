@@ -14,12 +14,10 @@ body
   -webkit-font-smoothing: antialiased
 
 header
-  height: 303px
   left: 30px
   position: fixed
   top: 20px
   width: 145px
-  +elements-sprite(navigation)
 
   a
     display: block
@@ -28,11 +26,14 @@ header
 
 #logo
   height: 174px
+  +elements-sprite(logo, $dimensions: true)
 
 nav a
+  margin: 3px 0 3px 22px
+  overflow: visible
   &:hover
-    background: rgba(white, 0.2)
-    +box-shadow(rgba(white, 0.2) 0 0 2px)
+    background-color: rgba(white, 0.1) !important
+    +box-shadow(rgba(white, 0.2) 0 0 5px)
   &.selected
     &:before,
     &:after
@@ -40,7 +41,7 @@ nav a
       content: ""
       height: 1px
       left: 0
-      margin: 0 -5px
+      margin: 0 -27px
       position: absolute
       top: 50%
       width: 20px
@@ -48,20 +49,10 @@ nav a
       left: auto
       right: 0
 
-#ueber-mich
-  height: 27px
+@each $id in ueber-mich kuenstler termine geigenunterricht kontakt
+  ##{$id}
+    +elements-sprite($id, $dimensions: true)
 
-#kuenstler
-  height: 29px
-
-#termine
-  height: 30px
-
-#geigenuntericht
-  height: 19px
-
-#kontakt
-  height: 29px
 
 article
   color: #e6d1de

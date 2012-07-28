@@ -12,7 +12,7 @@
     %header
       = link_to nil, '/', id: 'logo'
       %nav
-        - %w(ueber-mich kuenstler termine geigenuntericht kontakt).each do |page|
+        - %w(ueber-mich kuenstler termine geigenunterricht kontakt).each do |page|
           = link_to page, "#{page}.html", id: page, class: request.path =~ /#{page}/ ? 'selected' : nil
     %article
       = yield
