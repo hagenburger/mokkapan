@@ -11,6 +11,7 @@
   %body(class=page_classes)
     %header
       = link_to nil, '/', id: 'logo'
+      = link_to nil, '/', id: 'mokkapan'
       %nav
         - %w(ueber-mich kuenstler termine geigenunterricht kontakt).each do |page|
           = link_to page, "#{page}.html", id: page, class: request.path =~ /#{page}/ ? 'selected' : nil
