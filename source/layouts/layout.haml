@@ -3,7 +3,11 @@
   %head
     %meta(charset="utf-8")
     %meta(content="IE=edge,chrome=1" http-equiv="X-UA-Compatible")
-    %title= data.page.title || "Mokkapan"
+    %meta(content="#{data.page.description}" name="description")
+    %meta(content="moviepilot.com" property="og:site_name")
+    %meta(content="images/og-geigenunterricht.png" property="og:image")
+    %meta(content="#{data.page.description}" property="og:description")
+    %title= data.page.title || "Mokkapan Phongphit"
     = stylesheet_link_tag "mokkapan"
     = javascript_include_tag "all"
     %script(src="//use.typekit.net/inl1jab.js")
