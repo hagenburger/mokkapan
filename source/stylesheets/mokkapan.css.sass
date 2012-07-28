@@ -5,8 +5,8 @@ $elements-spacing: 10px
 @import "elements/*.png"
 
 html
-  background: #3a0325 image-url("background.jpg") no-repeat
-  +background-size(cover)
+  background: #3a0325 image-url("background.jpg") no-repeat fixed
+  +background-size(1700px auto)
 
 body
   font-family: "news-gothic-std-1", "news-gothic-std-2", helvetica, arial, sans-serif
@@ -16,7 +16,7 @@ body
 header
   height: 303px
   left: 30px
-  position: absolute
+  position: fixed
   top: 20px
   width: 145px
   +elements-sprite(navigation)
