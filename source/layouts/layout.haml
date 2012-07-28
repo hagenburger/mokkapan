@@ -7,7 +7,8 @@
     %meta(content="moviepilot.com" property="og:site_name")
     %meta(content="images/og-geigenunterricht.png" property="og:image")
     %meta(content="#{data.page.description}" property="og:description")
-    %title= data.page.title || "Mokkapan Phongphit"
+    - title = data.page.title
+    %title= (title.blank? ? '' : title + ' - ') + 'Mokkapan Phongphit'
     = stylesheet_link_tag "mokkapan"
     = javascript_include_tag "all"
     %script(src="//use.typekit.net/inl1jab.js")
