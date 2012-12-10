@@ -13,6 +13,9 @@ body
   font-weight: 400
   -webkit-font-smoothing: antialiased
 
+[lang=en]
+  font-style: italic
+
 header
   left: 30px
   position: fixed
@@ -105,6 +108,11 @@ h1
   margin: 0 0 0.75em
   text-transform: uppercase
   width: 600px
+  strong
+    color: lighten(#6e2854, 20%)
+    display: block
+  p + &
+    margin-top: 2em
 
 h2
   color: #883d6c
