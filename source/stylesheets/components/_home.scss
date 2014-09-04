@@ -11,12 +11,24 @@
   }
 
   &--container {
+    box-sizing: border-box;
+    left: -6vh;
+    padding: 6vh 6vh 0 50%;
     position: absolute;
-    left: -20px;
-    padding: 20px 40px;
     text-align: right;
     top: 0;
     width: 100vh;
+  }
+
+  &--title {
+    color: #5C1743;
+    font-size: 3vh;
+  }
+
+  &--sub-title {
+    color: #3C132D;
+    font-size: 2vh;
+    margin: 0;
   }
 }
 
