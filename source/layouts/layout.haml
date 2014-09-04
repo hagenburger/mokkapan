@@ -1,5 +1,5 @@
 !!!5
-%html
+%html.layout
   %head
     %meta(charset="utf-8")
     %meta(content="IE=edge,chrome=1" http-equiv="X-UA-Compatible")
@@ -13,12 +13,13 @@
     = javascript_include_tag "all"
     %script(src="//use.typekit.net/inl1jab.js")
     %script try{Typekit.load();}catch(e){}
-  %body(class=page_classes)
-    %header
-      = link_to nil, '.', id: 'logo'
-      = link_to nil, '.', id: 'mokkapan'
-      %nav
+  %body.layout--container(class=page_classes)
+    %header.layout--header
+      = link_to nil, '.', class: 'layout--logo'
+      = link_to nil, '.', class: 'layout--mokkapan'
+      %nav.navigation
         - %w(ueber-mich kuenstler termine geigenunterricht kontakt).each do |page|
-          = link_to page, "#{page}.html", id: page, class: request.path =~ /#{page}/ ? 'selected' : nil
-    %article
+          = link_to page, "#{page}.html", class: "navigation--item -#{page}#{' -selected' if request.path =~ /#{page}/}"
+    %article.layout--content
       = yield
+

@@ -1,0 +1,49 @@
+.layout {
+  background: #3a0325 image-url("background.jpg") no-repeat fixed;
+  @include background-size(1700px auto);
+
+  &--container {
+    font-family: news-gothic-std-1, news-gothic-std-2, helvetica, arial, sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  &--header {
+    left: 30px;
+    position: fixed;
+    top: 20px;
+    width: 145px;
+
+    &-link {
+      display: block;
+      position: relative;
+      @include hide-text;
+    }
+  }
+
+  &--logo,
+  &--mokkapan {
+    display: block;
+    @include elements-sprite(logo, $dimensions: true);
+    @include transition(opacity, 0.5s);
+
+    &:hover {
+      @include opacity(0.7);
+    }
+  }
+
+  &--mokkapan {
+    bottom: 20px;
+    left: 45px;
+    position: fixed;
+    @include elements-sprite(mokkapan, $dimensions: true);
+  }
+
+  &--content {
+    color: #e6d1de;
+    line-height: 1.4;
+    margin: 145px 100px 100px 250px;
+    width: 500px;
+  }
+}
+
