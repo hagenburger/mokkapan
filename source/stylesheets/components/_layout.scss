@@ -1,18 +1,20 @@
 .layout {
   background: #3a0325 image-url("background.jpg") no-repeat fixed;
+  height: 100%;
   @include background-size(1700px auto);
 
   &--container {
+    display: flex;
+    display: flexbox;
     font-family: news-gothic-std-1, news-gothic-std-2, helvetica, arial, sans-serif;
+    height: 100%;
     -webkit-font-smoothing: antialiased;
     font-weight: 400;
   }
 
   &--header {
-    left: 30px;
-    position: fixed;
-    top: 20px;
-    width: 145px;
+    padding: 20px;
+    width: 215px;
 
     &-link {
       color: transparent;
@@ -42,8 +44,9 @@
   &--content {
     color: #e6d1de;
     line-height: 1.4;
-    margin: 145px 100px 100px 250px;
-    width: 500px;
+    padding: 20px;
+    position: relative;
+    width: 100%;
   }
 }
 

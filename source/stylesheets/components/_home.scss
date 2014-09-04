@@ -1,0 +1,22 @@
+.home {
+  bottom: 20px;
+  display: flex;
+  left: 0;
+  position: absolute;
+  top: 20px;
+
+  &--image {
+    height: 100%;
+    position: absolute;
+  }
+
+  &--container {
+    position: absolute;
+    left: -20px;
+    padding: 20px 40px;
+    text-align: right;
+    top: 0;
+    width: 100vh;
+  }
+}
+
