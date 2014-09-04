@@ -2,16 +2,17 @@
   margin-top: 20px;
 
   .navigation--item {
+    display: flexbox;
     color: transparent;
     display: block;
     margin: 3px 0 3px 22px;
     overflow: visible;
-    @include transition(background-color, 0.5s);
-    @include transform(translateZ(0));
+    transform: translateZ(0);
+    transition: background-color 0.5s;
 
     &:hover {
       background-color: rgba(white, 0.1) !important;
-      @include box-shadow(rgba(white, 0.2) 0 0 5px);
+      box-shadow: rgba(white, 0.2) 0 0 5px
     }
 
     &.-selected {

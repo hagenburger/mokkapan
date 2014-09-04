@@ -4,8 +4,8 @@
 
   &--container {
     font-family: news-gothic-std-1, news-gothic-std-2, helvetica, arial, sans-serif;
-    font-weight: 400;
     -webkit-font-smoothing: antialiased;
+    font-weight: 400;
   }
 
   &--header {
@@ -15,20 +15,20 @@
     width: 145px;
 
     &-link {
+      color: transparent;
       display: block;
       position: relative;
-      @include hide-text;
     }
   }
 
   &--logo,
   &--mokkapan {
     display: block;
+    transition: opacity 0.5s;
     @include elements-sprite(logo, $dimensions: true);
-    @include transition(opacity, 0.5s);
 
     &:hover {
-      @include opacity(0.7);
+      opacity: 0.7;
     }
   }
 
