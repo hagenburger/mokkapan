@@ -137,6 +137,12 @@
       width: 15vw;
     }
 
+    &.big {
+      box-sizing: border-box;
+      margin: 0 0 20px 0;
+      width: 600px;
+    }
+
     &.full {
       box-sizing: border-box;
       margin: 0 0 20px;
