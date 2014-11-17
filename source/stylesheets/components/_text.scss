@@ -51,6 +51,13 @@
     p + & {
       margin-top: 2em;
     }
+
+    &.right {
+      margin: 0;
+      padding-top: 8vw;
+      text-align: right;
+      width: auto;
+    }
   }
 
   h2 {
@@ -109,6 +116,19 @@
   img {
     border: 1px rgba(white, 0.2) solid;
     padding: 2px;
+
+    &.right {
+      box-sizing: border-box;
+      float: right;
+      margin: 0 0 0 20px;
+      width: 15vw;
+    }
+
+    &.full {
+      box-sizing: border-box;
+      margin: 20px 0;
+      width: 100%;
+    }
   }
 }
 
