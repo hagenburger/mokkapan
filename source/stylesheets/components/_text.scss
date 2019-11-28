@@ -1,5 +1,7 @@
 .text {
-  [lang=en] {
+  padding-bottom: 50px;
+
+  [lang="en"] {
     font-style: italic;
   }
 
@@ -106,8 +108,8 @@
     display: block;
   }
 
-  a[href*=dribbble],
-  a[href*=twitter] {
+  a[href*="dribbble"],
+  a[href*="twitter"] {
     display: inline-block;
     margin: 0 0 0 0.3em;
     vertical-align: -2px;
@@ -115,7 +117,7 @@
     @include hide-text;
   }
 
-  a[href*=twitter] {
+  a[href*="twitter"] {
     @include elements-sprite-position(twitter);
   }
 
@@ -150,4 +152,3 @@
     }
   }
 }
-
